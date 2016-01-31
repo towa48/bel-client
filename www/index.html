@@ -44,9 +44,92 @@
   <script id="counter.html" type="text/ng-template">
     <ion-view title="Показания счетчика" left-buttons="leftButtons" drag-back>
       <ion-content has-header="true" padding="true">
-        {{meterSN}}
+        <div class="list">
+          <label class="item item-input">
+            <span class="input-label">Лицевой счет <span class="assertive">*</span></span>
+            <input type="text" placeholder="Номер лицевого счета" ng-model="form.account">
+          </label>
+          <label class="item item-input">
+            <span class="input-label">Дата показаний</span>
+            <button class="button button-clear button-input" ng-click="showDatePicker()">{{ form.c_date | date:'dd.MM.yyyy' }}</button>
+          </label>
+          <label class="item item-input item-select">
+            <span class="input-label">Тип тарифа</span>
+            <select ng-model="tariffType" ng-options="key*1 as value for (key,value) in TariffSelector"></select>
+          </label>
+          <label class="item item-input" ng-show="tariffType == Tariffs.TrippleRate">
+            <span class="input-label">Показания пик (Т2/А2) <span class="assertive">*</span></span>
+            <input type="text" placeholder="Округленное до целого" ng-model="form.c_peak">
+          </label>
+          <label class="item item-input">
+            <span class="input-label" ng-show="tariffType == Tariffs.SingleRate">Показания общие <span class="assertive">*</span></span>
+            <span class="input-label" ng-show="tariffType == Tariffs.DoubleRate">Показания день (Т1/А1) <span class="assertive">*</span></span>
+            <span class="input-label" ng-show="tariffType == Tariffs.TrippleRate">Показания полупик (Т3/А3) <span class="assertive">*</span></span>
+            <input type="text" placeholder="Округленное до целого" ng-model="form.c_day">
+          </label>
+          <label class="item item-input" ng-show="tariffType == Tariffs.DoubleRate || tariffType == Tariffs.TrippleRate">
+            <span class="input-label" ng-show="tariffType == Tariffs.DoubleRate">Показания ночь (Т2/А2) <span class="assertive">*</span></span>
+            <span class="input-label" ng-show="tariffType == Tariffs.TrippleRate">Показания ночь (Т1/А1) <span class="assertive">*</span></span>
+            <input type="text" placeholder="Округленное до целого" ng-model="form.c_night">
+          </label>
+          <label class="item item-input item-select">
+            <span class="input-label">Способ передачи счета</span>
+            <select ng-model="form.c_delivery" ng-options="key*1 as value for (key,value) in BillDeliverySelector"></select>
+          </label>
+          <label class="item item-input">
+            <span class="input-label">Электронный адрес</span>
+            <input type="text" placeholder="Адрес электронной почты для обратной связи" ng-model="form.email">
+          </label>
+          <label class="item item-input">
+            <span class="input-label">Телефон (без 8)</span>
+            <input type="text" placeholder="Десятизнаяный номер телефона, например 4955241279" ng-model="form.phone">
+          </label>
+        </div>
+        <div class="button-bar">
+          <button class="button button-positive" ng-click="send($event)">
+            Отправить <i class="ion-android-send"></i>
+          </button>
+          <button class="button button-stable" ng-click="cancel()">
+            <i class="ion-android-close"></i> Отмена
+          </button>
+        </div>
       </ion-content>
     </ion-view>
+  </script>
+
+  <script id="success-modal.html" type="text/ng-template">
+    <div class="modal">
+      <ion-header-bar>
+        <h1 class="title">Сообщение</h1>
+        <div class="button button-clear" ng-click="closeModal()"><span class="icon ion-close"></span></div>
+      </ion-header-bar>
+      <ion-content has-header="true">
+        <div class="padding text-center">
+          <h4>Показания успешно отправлены!</h4>
+        </div>
+      </ion-content>
+      <ion-footer-bar class="bar-balanced tabs">
+        <a href="#" class="tab-item" ng-click="closeModal($event)">ОК</a>
+      </ion-footer-bar>
+    </div>
+  </script>
+
+  <script id="error-modal.html" type="text/ng-template">
+    <div class="modal">
+      <ion-header-bar>
+        <h1 class="title">Сообщение</h1>
+        <div class="button button-clear" ng-click="closeModal()"><span class="icon ion-close"></span></div>
+      </ion-header-bar>
+      <ion-content has-header="true">
+        <div class="padding text-center">
+          <h4>Показания не отправлены по техническим причинам!</h4>
+          <p>Попробуйте позже или воспользуйтесь официальным порталом <a href="http://www.belssb.ru" target="_blank">ЗАО "Балашихинская Электросеть"</a></p>
+        </div>
+      </ion-content>
+      <ion-footer-bar class="bar-assertive tabs">
+        <a href="#" class="tab-item" ng-click="closeModal($event)">ОК</a>
+      </ion-footer-bar>
+    </div>
   </script>
 
   </body>

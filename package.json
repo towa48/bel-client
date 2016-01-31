@@ -26,5 +26,7 @@
       "id": "cordova-plugin-datepicker"
     }
   ],
-  "cordovaPlatforms": []
+  "cordovaPlatforms": [
+    "android"
+  ]
 }

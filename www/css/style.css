@@ -1,0 +1,6 @@
+.button.button-stable {
+  border-color: #b2b2b2;
+}
+.button.button-stable.active, .button.button-stable.activated {
+  border-color: #a2a2a2;
+}

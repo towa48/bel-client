@@ -4,6 +4,11 @@
 
 Мобильное приложение для отправки показаний счетчика ЗАО «Балашихинская Электросеть»
 
+## Готовые сборки
+
+Готовые сборки программы под andorid можно скачать в разделе [Releases](./releases).
+Для устновки скачайте файл "BelClient.apk", и кликните по нему в проводнике android. При необходимости так же надо будет включить установку от ["неизвестных поставщиков"](http://developer.android.com/distribute/tools/open-distribution.html#unknown-sources) (этот пункт можно найти в разделе "безопасность" вашего телефона).
+
 ## Разработка
 
 Программа написана на платформе [ionic](http://ionicframework.com/):
@@ -31,11 +36,6 @@
 ```
 
 Процесс подписи сборки под andoid описан в разделе ["Publishing your app"](http://ionicframework.com/docs/guide/publishing.html).
-
-## Релизы
-
-Готовые сборки программы под andorid можно скачать в разделе [Releases](./releases).
-Для устновки скачайте файл "BelClient.apk", и кликните по нему в проводнике android. При необходимости так же надо будет включить установку от ["неизвестных поставщиков"](http://developer.android.com/distribute/tools/open-distribution.html#unknown-sources) (этот пункт можно найти в разделе "безопасность" вашего телефона).
 
 ## Требования
 _Определяются плагином cordova-plugin-datepicker_

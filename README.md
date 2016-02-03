@@ -6,7 +6,7 @@
 
 ## Готовые сборки
 
-Готовые сборки программы под andorid можно скачать в разделе [Releases](./releases).
+Готовые сборки программы под andorid можно скачать в разделе [Releases](https://github.com/towa48/bel-client/releases).
 Для устновки скачайте файл "BelClient.apk", и кликните по нему в проводнике android. При необходимости так же надо будет включить установку от ["неизвестных поставщиков"](http://developer.android.com/distribute/tools/open-distribution.html#unknown-sources) (этот пункт можно найти в разделе "безопасность" вашего телефона).
 
 ## Разработка

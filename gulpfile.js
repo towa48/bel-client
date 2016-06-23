@@ -10,6 +10,7 @@ var ngConstant = require('gulp-ng-constant');
 var del = require('del');
 var sourcemaps = require('gulp-sourcemaps');
 var uglify = require('gulp-uglify');
+var argv = require('yargs').argv;
 
 var paths = {
   sass: ['./scss/**/*.scss'],
@@ -38,7 +39,7 @@ gulp.task('build:clean', function() {
 
 gulp.task('build:ngconfig', ['build:clean'], function(done) {
   var ngConfig = require(paths.config);
-  var env = 'development';
+  var env = argv.release ? 'production' : 'development';
   var envConfig = ngConfig[env];
   return ngConstant({
       name: envConfig['name'],

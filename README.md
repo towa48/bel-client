@@ -19,14 +19,18 @@
 * JavaScript, HTML, CSS
 
 Для начала необходимо скачать и установить [NodeJs](https://nodejs.org/).
-Затем установить ionic и cordova:
+Затем установить зависимости:
 ```shell
 > sudo npm install -g ionic
 > sudo npm install -g cordova
+> sudo npm install -g bower
+> npm install
+> bower install
 ```
 
-Запуск проекта в браузере:
+Сборка и запуск проекта в браузере:
 ```shell
+> gulp
 > ionic serve
 ```
 
@@ -34,6 +38,7 @@
 
 Сборка проекта под Android:
 ```shell
+> gulp --release
 > cordova build --release android
 ```
 

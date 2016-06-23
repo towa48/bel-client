@@ -3,7 +3,7 @@
   "app_id": "",
   "proxies": [
     {
-      "path": "/counter",
+      "path": "/api/PokazForm",
       "proxyUrl": "http://belssb.ru/bitrix/ajax_handlers/PokazForm.php"
     }
   ]

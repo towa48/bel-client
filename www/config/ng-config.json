@@ -1,0 +1,14 @@
+{
+  "development": {
+    "name": "BelApp.Config",
+    "constants": {
+      "apiUrl": "/api/PokazForm"
+    }
+  },
+  "production": {
+    "name": "BelApp.Config",
+    "constants": {
+      "apiUrl": "http://belssb.ru/bitrix/ajax_handlers/PokazForm.php"
+    }
+  }
+}

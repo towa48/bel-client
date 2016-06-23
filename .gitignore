@@ -4,3 +4,13 @@
 node_modules/
 platforms/
 plugins/
+www/lib/
+
+# config and bundles
+www/js/config.js
+www/js/*-bundle.js
+www/js/*-bundle.min.js
+www/js/*.map
+
+# compiled css
+www/css/ionic.*

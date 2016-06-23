@@ -39,6 +39,7 @@
 Сборка проекта под Android:
 ```shell
 > gulp --release
+> cordova platform add android
 > cordova build --release android
 ```
 

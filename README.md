@@ -21,10 +21,10 @@
 Для начала необходимо скачать и установить [NodeJs](https://nodejs.org/).
 Затем установить зависимости:
 ```shell
-> sudo npm install -g gulp
-> sudo npm install -g ionic
-> sudo npm install -g cordova
-> sudo npm install -g bower
+# npm install -g gulp
+# npm install -g ionic
+# npm install -g cordova
+# npm install -g bower
 > npm install
 > bower install
 ```
@@ -36,6 +36,8 @@
 ```
 
 ## Сборка
+
+Предварительно необходимо скачать и настроить ["Android SDK и Java Development Kit"](https://cordova.apache.org/docs/ru/latest/guide/platforms/android/).
 
 Сборка проекта под Android:
 ```shell

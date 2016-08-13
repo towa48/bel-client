@@ -21,6 +21,7 @@
 Для начала необходимо скачать и установить [NodeJs](https://nodejs.org/).
 Затем установить зависимости:
 ```shell
+> sudo npm install -g gulp
 > sudo npm install -g ionic
 > sudo npm install -g cordova
 > sudo npm install -g bower

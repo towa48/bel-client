@@ -45,6 +45,19 @@
 
 Процесс подписи сборки под andoid описан в разделе ["Publishing your app"](http://ionicframework.com/docs/guide/publishing.html).
 
+## Отладка в эмуляторе Android
+
+Установка приложения в эмулятор
+```shell
+> adb install ~/workspace/belclient/belclient-signed-1.0.0-beta3.apk
+```
+
+Просмотр вывода console.log с эмулятора
+
+```shell
+> adb logcat chromium:D *:S
+```
+
 ## Требования
 _Определяются плагином cordova-plugin-datepicker_
 
